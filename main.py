@@ -13,6 +13,15 @@ def show_instructions():
     print("Separate your input by spaces. For example, you can enter: 10 + 5")
 
 
+def validate_format(user_input):
+    parts = user_input.split()
+    if len(parts) != 3:
+        print(f"Invalid input. Please follow the format: <num1> <operator> <num2>.")
+        return True
+    else:
+        return None
+
+
 def validate_input(user_input):
 
     # Possible input check with RegEx:
@@ -71,9 +80,7 @@ def main():
             print("Goodbye!")
             break
 
-        parts = user_input.split()
-        if len(parts) != 3:
-            print(f"Invalid input. Please follow the format: <num1> <operator> <num2>.")
+        if validate_format(user_input):
             continue
 
         num1, operator, num2, validation_message = validate_input(user_input)
