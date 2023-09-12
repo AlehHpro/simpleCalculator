@@ -1,0 +1,29 @@
+# Console Calculator
+
+This is a simple console calculator application written in Python 3.
+It allows you to perform basic arithmetic operations.
+
+## Requirements
+
+- Python 3
+
+## How to Use
+
+1. **Clone the repository:**
+
+git clone https://github.com/your-username/console-calculator.git
+
+2. **Navigate to the project directory:**
+
+cd console-calculator
+
+3. **Run the calculator:**
+
+python console_calculator.py
+
+4. **Follow the instructions:**
+
+- Upon running the calculator, you will be greeted and given instructions.
+- Enter your calculations in the format `<num1> <operator> <num2>`, for example, `10 + 5`.
+- The result will be displayed rounded to 3 decimal places.
+- To exit the calculator, simply type `quit`.
