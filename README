@@ -27,3 +27,36 @@ python console_calculator.py
 - Enter your calculations in the format `<num1> <operator> <num2>`, for example, `10 + 5`.
 - The result will be displayed rounded to 3 decimal places.
 - To exit the calculator, simply type `quit`.
+
+## Running Unit Tests
+
+1. Open your terminal.
+
+2. Navigate to the directory where your Python project is located using the `cd` command. For example:
+
+   ```bash
+   cd /path/to/your/python/project
+
+- Run the following command to execute your unit tests:
+
+  python -m unittest test_module_name
+
+- Replace test_module_name with the name of the Python file containing your test cases.
+  This file should be in the same directory as your main code or within a tests directory,
+  depending on your project structure.
+
+  For example, if your test cases are in a file named test_calculator.py, you would run:
+
+  python -m unittest test_calculator
+
+- The tests will run, and you'll see the output in the terminal.
+  Successful tests will be indicated by dots (.), and any failed tests will display an 'F' character
+  along with a summary of the failures.
+
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.123s
+
+OK
+
+- If there are any test failures, the output will provide details about which tests failed and why.
