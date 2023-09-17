@@ -1,4 +1,4 @@
-# simpleCalculator.py
+# simple_calculator.py
 
 import math
 import re
@@ -15,22 +15,63 @@ def show_instructions():
 
 def validate_format(user_input):
     parts = user_input.split()
-    if len(parts) != 3:
+
+    if len(parts) == 1:
+        # Remove whitespaces and then check if the input contains two numbers and an operator
+        input_without_spaces = ''.join(user_input.split())
+
+        # Ensure the input consists of digits, followed by one of the operators (+, -, *, /),
+        # followed by more digits.
+        if not re.match(r'^-?[0-9.]+ ?[+\-*/] ?-?[0-9.]+$', input_without_spaces):
+            print(f"Invalid input. Please follow the format: <num1> <operator> <num2>.")
+            return True
+        else:
+            return None
+
+    elif len(parts) == 2:
         print(f"Invalid input. Please follow the format: <num1> <operator> <num2>.")
         return True
-    else:
-        return None
+
+    elif len(parts) > 3:
+        print(f"Invalid input. Please follow the format: <num1> <operator> <num2>.")
+        return True
 
 
 def validate_input(user_input):
 
-    # Possible input check with RegEx:
-    # Check if input contains only digits, decimal points, operator, and whitespace
-    # if not re.match(r'^[0-9+.\-*/\s]+$', user_input):
-    #     return None, "Invalid characters in input. Please use digits, operators (+, -, *, /), and spaces only."
-
     try:
-        num1, operator, num2 = user_input.split()
+        input_without_spaces = ''.join(user_input.split())
+        num1 = ''
+        num2 = ''
+        operator = ''
+
+        i = 0
+        while i < len(input_without_spaces):
+            char = input_without_spaces[i]
+
+            # Handle the first character as a potential negative sign
+            if char == '-' and i == 0:
+                num1 += '-'
+                i += 1
+                continue
+
+            if char == '-' and i != 0:
+                num2 += '-'
+                i += 1
+                continue
+
+            # Check if the character is a digit or a decimal point
+            if char.isdigit() or char == '.':
+                if operator == '':
+                    num1 += char
+                else:
+                    num2 += char
+                i += 1
+            elif operator == '':
+                operator = char
+                i += 1
+            else:
+                return None, None, None, f"INVALID: You need to enter a number!"
 
         # Replace any comma (,) with a period (.) for decimal numbers
         num1 = num1.replace(',', '.')

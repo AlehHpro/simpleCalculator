@@ -2,7 +2,7 @@ import sys
 import unittest
 from io import StringIO
 
-from main import greet_user, show_instructions, validate_input, calculate_result, validate_format
+from simple_calculator import greet_user, show_instructions, validate_input, calculate_result, validate_format
 
 
 class TestCalculatorFunctions(unittest.TestCase):
