@@ -11,15 +11,15 @@ It allows you to perform basic arithmetic operations.
 
 1. **Clone the repository:**
 
-git clone https://github.com/your-username/console-calculator.git
+git clone https://github.com/AlehHpro/simpleCalculator.git
 
 2. **Navigate to the project directory:**
 
-cd console-calculator
+cd simpleCalculator
 
 3. **Run the calculator:**
 
-python console_calculator.py
+python simple_calculator.py
 
 4. **Follow the instructions:**
 
@@ -39,15 +39,15 @@ python console_calculator.py
 
 - Run the following command to execute your unit tests:
 
-  python -m unittest test_module_name
+  python -m unittest test_calculator_functions
 
-- Replace test_module_name with the name of the Python file containing your test cases.
+- Replace test_calculator_functions with the name of the Python file containing your test cases.
   This file should be in the same directory as your main code or within a tests directory,
   depending on your project structure.
 
-  For example, if your test cases are in a file named test_calculator.py, you would run:
+  For example, if your test cases are in a file named test_calculator_functions.py, you would run:
 
-  python -m unittest test_calculator
+  python -m unittest test_calculator_functions
 
 - The tests will run, and you'll see the output in the terminal.
   Successful tests will be indicated by dots (.), and any failed tests will display an 'F' character
